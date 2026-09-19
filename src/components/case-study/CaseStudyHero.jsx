@@ -1,7 +1,7 @@
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function CaseStudyHero({ eyebrow, title, url, urlLabel, demo }) {
+export default function CaseStudyHero({ eyebrow, title, url, urlLabel }) {
   return (
     <header className="mx-auto max-w-3xl px-6 pt-12 pb-10 md:px-10 md:pt-16">
       <Link
@@ -32,12 +32,6 @@ export default function CaseStudyHero({ eyebrow, title, url, urlLabel, demo }) {
           className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
         />
       </a>
-
-      {demo && (
-        <p className="mt-4 font-mono text-xs text-ink-faint">
-          Compte de démonstration : {demo.email} · {demo.password}
-        </p>
-      )}
     </header>
   );
 }
