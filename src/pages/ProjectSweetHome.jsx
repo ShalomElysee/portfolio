@@ -31,12 +31,14 @@ export default function ProjectSweetHome() {
         urlLabel="Ouvrir l'application"
       />
 
-      <div className="mx-auto max-w-3xl px-6 md:px-10">
+      <div className="mx-auto max-w-3xl px-6 md:px-10 lg:hidden">
         <DemoAccess email="test@sweethome.com" password="R7kSRLk#Rw+pZN9" />
       </div>
 
-      <div className="mx-auto max-w-5xl px-6 pb-24 md:px-10 lg:grid lg:grid-cols-[180px_1fr] lg:gap-16">
-        <SectionNav sections={sections} />
+      <div className="mx-auto max-w-5xl px-6 pb-24 md:px-10 lg:grid lg:grid-cols-[220px_1fr] lg:gap-16">
+        <SectionNav sections={sections}>
+          <DemoAccess email="test@sweethome.com" password="R7kSRLk#Rw+pZN9" />
+        </SectionNav>
 
         <div>
           <Section title="Le besoin">

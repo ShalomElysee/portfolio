@@ -27,7 +27,7 @@ export default function ProjectPriscille() {
         urlLabel="Voir le site"
       />
 
-      <div className="mx-auto max-w-5xl px-6 pt-6 pb-24 md:px-10 lg:grid lg:grid-cols-[180px_1fr] lg:gap-16">
+      <div className="mx-auto max-w-5xl px-6 pt-6 pb-24 md:px-10 lg:grid lg:grid-cols-[220px_1fr] lg:gap-16">
         <SectionNav sections={sections} />
 
         <div>
