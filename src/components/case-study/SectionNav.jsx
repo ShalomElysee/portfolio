@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { slugify } from "../../lib/slugify";
 
-export default function SectionNav({ sections, children }) {
+export default function SectionNav({ sections }) {
   const [activeId, setActiveId] = useState(() => slugify(sections[0]));
 
   useEffect(() => {
@@ -24,35 +24,29 @@ export default function SectionNav({ sections, children }) {
   }, [sections]);
 
   return (
-    <div className="hidden lg:block">
-      <div className="sticky top-24 flex max-h-[calc(100vh-7rem)] flex-col gap-6 self-start overflow-y-auto">
-        {children}
-
-        <nav>
-          <p className="font-mono text-xs uppercase tracking-widest text-ink-faint">
-            Sur cette page
-          </p>
-          <ul className="mt-4 space-y-3 border-l border-line pl-4">
-            {sections.map((title) => {
-              const id = slugify(title);
-              const active = id === activeId;
-              return (
-                <li key={title}>
-                  <a
-                    href={`#${id}`}
-                    aria-current={active ? "location" : undefined}
-                    className={`block text-sm leading-snug transition-colors hover:text-blue ${
-                      active ? "font-medium text-blue" : "text-ink-soft"
-                    }`}
-                  >
-                    {title}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <nav className="sticky top-24 hidden self-start lg:block">
+      <p className="font-mono text-xs uppercase tracking-widest text-ink-faint">
+        Sur cette page
+      </p>
+      <ul className="mt-4 space-y-3 border-l border-line pl-4">
+        {sections.map((title) => {
+          const id = slugify(title);
+          const active = id === activeId;
+          return (
+            <li key={title}>
+              <a
+                href={`#${id}`}
+                aria-current={active ? "location" : undefined}
+                className={`block text-sm leading-snug transition-colors hover:text-blue ${
+                  active ? "font-medium text-blue" : "text-ink-soft"
+                }`}
+              >
+                {title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }

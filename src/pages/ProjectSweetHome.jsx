@@ -4,7 +4,6 @@ import Section from "../components/case-study/Section";
 import SectionNav from "../components/case-study/SectionNav";
 import Callout from "../components/case-study/Callout";
 import Labeled from "../components/case-study/Labeled";
-import DemoAccess from "../components/case-study/DemoAccess";
 import Figure from "../components/case-study/Figure";
 import sweethomeAccueil from "../assets/screenshots/sweethome-accueil.webp";
 import sweethomeAjout from "../assets/screenshots/sweethome-ajout.webp";
@@ -29,16 +28,11 @@ export default function ProjectSweetHome() {
         title="SweetHome"
         url="https://sweethomeproject.netlify.app/"
         urlLabel="Ouvrir l'application"
+        demo={{ email: "test@sweethome.com", password: "R7kSRLk#Rw+pZN9" }}
       />
 
-      <div className="mx-auto max-w-3xl px-6 md:px-10 lg:hidden">
-        <DemoAccess email="test@sweethome.com" password="R7kSRLk#Rw+pZN9" />
-      </div>
-
-      <div className="mx-auto max-w-5xl px-6 pb-24 md:px-10 lg:grid lg:grid-cols-[220px_1fr] lg:gap-16">
-        <SectionNav sections={sections}>
-          <DemoAccess email="test@sweethome.com" password="R7kSRLk#Rw+pZN9" />
-        </SectionNav>
+      <div className="mx-auto max-w-5xl px-6 pb-24 md:px-10 lg:grid lg:grid-cols-[180px_1fr] lg:gap-16">
+        <SectionNav sections={sections} />
 
         <div>
           <Section title="Le besoin">
